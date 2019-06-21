@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DB Forum</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css')}}">
-    <style>
-      h1, form { text-align: center; }
-      textarea { width: 400px; height: 100px; }
-      div.post { border: 1px solid #999;
-                 padding: 10px 10px;
-                 margin: 10px 20%%; }
-      hr.postbound { width: 50%%; }
-      em.date { color: #999 }
-    </style>
-  </head>
-  <body>
-    <h1>DB Forum</h1>
-    <form method=post>
-      <div><textarea id="content" name="content"></textarea></div>
-      <div><button id="go" type="submit">Post message</button></div>
-    </form>
-    <!-- post content will go here -->
-%s
-  </body>
+<head>
+    <title>{{ result.title }}</title>
+    {% include 'includes.html' %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+{% include 'top.html' %}
+
+<div>&nbsp;</div>
+
+<div class="container">
+
+    <div class="row table-light">
+        <div class="col-4">
+            Categories
+        </div>
+        <div class="col-8">
+            Latest Items
+        </div>
+    </div>
+
+</div>
+{% include 'footer.html' %}
+</body>
 </html>
